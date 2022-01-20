@@ -1,0 +1,6 @@
+{
+    "handler": {
+        "token": "token goes here",
+        "intents": ""
+    }
+}

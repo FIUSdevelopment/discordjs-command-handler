@@ -1,0 +1,42 @@
+{
+  "name": "discordjs-command-handler",
+  "version": "0.0.0",
+  "description": "The simplest yet advanced command handler ever. Creating a discord bot has never been easier ",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FIUSdevelopment/discordjs-command-handler.git"
+  },
+  "keywords": [
+    "command",
+    "handler",
+    "discord.js",
+    "discordjs",
+    "discordjs",
+    "command",
+    "handler",
+    "discord.js",
+    "command",
+    "handler",
+    "discord.js",
+    "v13",
+    "command",
+    "handler",
+    "discordjs",
+    "v13",
+    "command",
+    "handler"
+  ],
+  "author": "FIUS Development | Killer Boss Original",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FIUSdevelopment/discordjs-command-handler/issues"
+  },
+  "homepage": "https://github.com/FIUSdevelopment/discordjs-command-handler#readme",
+  "dependencies": {
+    "discord.js": "^13.6.0"
+  }
+}
