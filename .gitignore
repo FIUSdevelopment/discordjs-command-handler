@@ -1,2 +1,5 @@
 node_modules
 main.json
+index-linux
+index-macos
+index-win.exe
