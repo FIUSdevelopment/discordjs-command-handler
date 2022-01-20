@@ -1,10 +1,11 @@
 {
   "name": "discordjs-command-handler",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "The simplest yet advanced command handler ever. Creating a discord bot has never been easier ",
   "main": "index.js",
   "scripts": {
-    "test": "npm start"
+    "test": "npm start",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
