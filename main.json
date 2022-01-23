@@ -1,13 +1,13 @@
 {
-    "handler": {
-        "token": "ODkwMjg2NzMzMTE0MDkzNTg4.YUtmIQ.v77g44z2LtSwhXHdIKEkQVFP-3Q",
-        "intents": ""
-    },
-    "global": {
-        "testserverid": "831267653929795604",
-        "botcandocommands": true,
-        "botdb": 0,
-        "comment1": "If 0 do you have to put the bot id in main.json/.global.allowedbots, if 1 you have to use the integrated database",
-        "allowedbots": []
-    }
+	"handler": {
+		"token": "ODkwMjg2NzMzMTE0MDkzNTg4.YUtmIQ.v77g44z2LtSwhXHdIKEkQVFP-3Q",
+		"intents": ""
+	},
+	"global": {
+		"testserverid": "831267653929795604",
+		"botcandocommands": true,
+		"botdb": 0,
+		"comment1": "If 0 do you have to put the bot id in main.json/.global.allowedbots, if 1 you have to use the integrated database",
+		"allowedbots": []
+	}
 }

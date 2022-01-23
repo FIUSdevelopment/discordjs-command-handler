@@ -1,14 +1,22 @@
 const Discord = require('discord.js');
 const config = require('../main.json');
+const fs = require('fs');
+
 module.exports = (client) => {
-  const slashFiles = fs.readdirSync('./slashcommands').filter(file => file.endsWith('.js'));
 
-  client.slashcommands = new Discord.Collection();
+	client.slashcommands = new Discord.Collection();
+	const arrayOfSlashCommands = [];
 
-  for (const file of slashFiles) {
-    const command = require(`../slashcommands/${file}`);
-    client.slashcommands.set(command.data.name, command);
-    if (command.public) client.application.slashcommands.set(arrayOfSlashCommands);
-    else client.guilds.cache.get(config.global.testserverid).slashcommands.set(arrayOfSlashCommands);
-  }
-}
+	const categories = fs.readdirSync('./slashcommands');
+	for (const category of categories) {
+		const commandFiles = fs.readdirSync(`../slashcommands/${category}`).filter(file => file.endsWith('.js'));
+		for (const file of commandFiles) {
+			const command = require(`./slashcommands/${category}/${file}`);
+			arrayOfSlashCommands.push(command);
+			client.slashcommands.set(command.data.name, command.data);
+			client.application.slashcommands.set(arrayOfSlashCommands);
+		}
+
+	}
+
+};
