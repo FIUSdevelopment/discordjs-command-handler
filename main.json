@@ -1,7 +1,7 @@
 {
 	"handler": {
 		"token": "ODkwMjg2NzMzMTE0MDkzNTg4.YUtmIQ.v77g44z2LtSwhXHdIKEkQVFP-3Q",
-		"intents": ""
+		"intents": "131071"
 	},
 	"global": {
 		"testserverid": "831267653929795604",

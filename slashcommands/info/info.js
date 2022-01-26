@@ -7,6 +7,6 @@ module.exports = {
 		.setDescription('descrizione'),
 	// permissions: [],
 	execute(interaction, client) {
-		
+		interaction.reply("Pong")
 	},
 };

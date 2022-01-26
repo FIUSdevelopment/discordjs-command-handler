@@ -6,8 +6,8 @@ module.exports = {
 	async execute(interaction, client) {
 		if (interaction.isCommand()) {
 			// Server language
-			interaction.guildLanguage = await client.db.get(interaction.guild.id).language;
-			interaction.language = client.languages.get(interaction.guildLanguage);
+//			interaction.guildLanguage = await client.db.get(interaction.guild.id).language;
+//			interaction.language = client.languages.get(interaction.guildLanguage);
 			// Command name
 			const command = client.commands.get(interaction.commandName);
 			if (!command) return;
