@@ -14,6 +14,7 @@ module.exports = {
 	get() {
 		return client;
 	},
+	client
 };
 
 require('./events.js')(client);
