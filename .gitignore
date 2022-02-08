@@ -1,6 +1,4 @@
 node_modules
-index-linux
 index-macos
-index-win.exe
 .eslintrc.json
 package-lock.json
