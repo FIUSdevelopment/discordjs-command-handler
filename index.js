@@ -2,7 +2,7 @@ const { Client, Collection } = require("discord.js");
 // Import Discord.Js.
 const client = new Client({ intents: 32767 });
 // Make New Discord Client.
-module.exports = client;
+// module.exports = client;
 // Export Client To Give Other Files Access.
 const chalk = require("chalk");
 // Import Chalk
@@ -59,7 +59,16 @@ if(token === ""){
          chalk.yellow.italic("Discord Server: dsc.gg/botsway")
    );
 } else {
-   client.login(token);
+   module.exports = {
+      run() {
+         client.login(token);
+         return client;
+      },
+      get() {
+         return client;
+      },
+      client
+   };
 }
 // Login The Bot.
 // ———————————————[Error Handling]———————————————
