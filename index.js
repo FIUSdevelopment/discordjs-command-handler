@@ -2,7 +2,7 @@ const { Client, Collection } = require("discord.js");
 // Import Discord.Js.
 const client = new Client({ intents: 32767 });
 // Make New Discord Client.
-// module.exports = client;
+module.exports = client;
 // Export Client To Give Other Files Access.
 const chalk = require("chalk");
 // Import Chalk
@@ -59,19 +59,11 @@ if(token === ""){
          chalk.yellow.italic("Discord Server: dsc.gg/botsway")
    );
 } else {
-   module.exports = {
-      run() {
-         client.login(token);
-         return client;
-      },
-      get() {
-         return client;
-      },
-      client
-   };
+   client.login(token);
 }
 // Login The Bot.
 // ———————————————[Error Handling]———————————————
+var glblog = 908857841081782352
 process.on("unhandledRejection", (reason, p) => {
    console.log(chalk.gray("—————————————————————————————————"));
    console.log(
@@ -108,5 +100,3 @@ process.on("multipleResolves", (type, promise, reason) => {
    console.log(chalk.gray("—————————————————————————————————"));
    console.log(type, promise, reason);
 });
-
-
