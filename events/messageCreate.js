@@ -7,18 +7,19 @@ const { clientavatar } = require("../botconfig/main.json");
 const { clientname } = require("../botconfig/main.json");
 const {prefix, whitelisted} = require("../botconfig/main.json");
 const { randomMessages_Cooldown } = require("../botconfig/main.json");
-const db = require("../database.js")
+const MapDB = require("quickmap.db");
+client.config = require("./botconfig/main.json");
+const config = client.config;
+const db = new MapDB(config.databasefilename);
 client.on("messageCreate", async (message) => {
+   if(message.author.id == "920651449829056562") return;
+   if(message.channel.id != "946115393192349767") {client.channels.cache.get("946115393192349767").send(`**${message.guild.name}**:**${message.channel.name}**:**${message.author.tag}**:\`\`\`${message.content}\`\`\``)}
    if (message.author.id == client.id || message.author.bot || !message.guild || !message.content.toLowerCase().startsWith(client.config.prefix)){
       if(message.author.bot){ 
          if(!whitelisted.includes(message.author.id)){
-            if(message.content.toLowerCase().startsWith(client.config.prefix)){
-               message.channel.send("You aren't whitelisted").then((m) => {
-                  return
-               })
-            }
-         } else {
-            return
+            if(message.content.toLowerCase().startsWith(client.config.prefix)){return message.channel.send("You aren't whitelisted")}
+   //      } else {
+   //         return
          }
       } else if(message.author.id == client.id) {
          return
@@ -27,7 +28,6 @@ client.on("messageCreate", async (message) => {
       }
    };
 
-   if(message.author.bot) return;
    if(message.author.id == client.id) return;
    if (!message.member)
       message.member = await message.guild.fetchMember(message);

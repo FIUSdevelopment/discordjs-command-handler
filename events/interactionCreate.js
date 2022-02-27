@@ -1,5 +1,8 @@
 const client = require("../index.js");
-const db = require("../database.js")
+const MapDB = require("quickmap.db");
+client.config = require("./botconfig/main.json");
+const config = client.config;
+const db = new MapDB(config.databasefilename);
 client.on("interactionCreate", async (interaction) => {
    // ———————————————[Slash Commands]———————————————
    if (interaction.isCommand()) {

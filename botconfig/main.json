@@ -28,7 +28,9 @@
 
   "slashcommandspublic": true,
 
-  "noteslashcommandpublic": "True if your slash commands are for all server, false if is only for testing server"
+  "noteslashcommandpublic": "True if your slash commands are for all server, false if is only for testing server",
+
+  "databasefilename": ""
 }
 
 

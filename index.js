@@ -6,6 +6,7 @@ module.exports = client;
 // Export Client To Give Other Files Access.
 const chalk = require("chalk");
 // Import Chalk
+const MapDB = require('quickmap.db');
 
 // ———————————————[Global Variables]———————————————
 client.commands = new Collection();
@@ -13,6 +14,8 @@ client.aliases = new Collection();
 client.cooldowns = new Collection();
 client.slashCommands = new Collection();
 client.config = require("./botconfig/main.json");
+const config = client.config;
+client.db = new MapDB(config.databasefilename);
 require("./handler")(client);
 // Initializing the project.
 

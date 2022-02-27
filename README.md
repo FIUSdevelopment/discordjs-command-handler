@@ -9,8 +9,3 @@ This is a free repositories, you can use it but you have to keep credits.js (the
 
 ## Help:
 If You need help do not esitate to contact me in the support server (https://bit.ly/fius) or open an issue.
-
-
-
-
-###### Credits to https://github.com/DrakeZee/drake-djs-handler
