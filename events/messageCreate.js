@@ -2,33 +2,29 @@ const client = require("../index");
 const { MessageEmbed } = require("discord.js");
 const chalk = require("chalk");
 const ms = require("ms");
-const { developerID } = require("../botconfig/main.json");
-const { clientavatar } = require("../botconfig/main.json");
-const { clientname } = require("../botconfig/main.json");
-const {prefix, whitelisted} = require("../botconfig/main.json");
+const { developerID, clientavatar, clientname, whitelisted } = require("../botconfig/main.json");
+const prefix = client.config.prefix;
 const { randomMessages_Cooldown } = require("../botconfig/main.json");
-const MapDB = require("quickmap.db");
-client.config = require("./botconfig/main.json");
-const config = client.config;
-const db = new MapDB(config.databasefilename);
+const { config } = require("process");
 client.on("messageCreate", async (message) => {
-   if(message.author.id == "920651449829056562") return;
-   if(message.channel.id != "946115393192349767") {client.channels.cache.get("946115393192349767").send(`**${message.guild.name}**:**${message.channel.name}**:**${message.author.tag}**:\`\`\`${message.content}\`\`\``)}
-   if (message.author.id == client.id || message.author.bot || !message.guild || !message.content.toLowerCase().startsWith(client.config.prefix)){
-      if(message.author.bot){ 
-         if(!whitelisted.includes(message.author.id)){
-            if(message.content.toLowerCase().startsWith(client.config.prefix)){return message.channel.send("You aren't whitelisted")}
-   //      } else {
-   //         return
-         }
-      } else if(message.author.id == client.id) {
-         return
-      } else {
+      if (!message.guild || !message.content.toLocaleLowerCase().startsWith(client.config.prefix)){
          return
       }
-   };
-
-   if(message.author.id == client.id) return;
+      if (message.author.bot) {
+         if (!whitelisted.includes(message.author.id)){
+            if (message.author.bot){
+               if (message.content.toLocaleLowerCase().startsWith(client.config.prefix)) {
+                  return message.channel.send("You aren't whitelisted");
+               }
+            }
+         }
+      }
+   /*   if (
+      message.author.bot ||
+      !message.guild ||
+      !message.content.toLowerCase().startsWith(client.config.prefix)
+   ) 
+      return;*/
    if (!message.member)
       message.member = await message.guild.fetchMember(message);
    const [cmd, ...args] = message.content
@@ -38,9 +34,9 @@ client.on("messageCreate", async (message) => {
    let noargs_embed = new MessageEmbed()
       .setTitle(`:x: | Please Provide A Command To Be Executed!`)
       .setColor("RED")
-      .setFooter(`${clientname}`, `${clientavatar}`)
+      .setFooter({text: `${clientname}`, iconURL: `${clientavatar}`})
       .setTimestamp();
-   if (cmd.length === 0 && message.author.id != client.id && !message.author.bot) return message.reply({ embeds: [noargs_embed] });
+   if (cmd.length === 0) return message.reply({ embeds: [noargs_embed] });
 
    const command =
       client.commands.get(cmd.toLowerCase()) ||
@@ -48,30 +44,30 @@ client.on("messageCreate", async (message) => {
    let nocmd_embed = new MessageEmbed()
       .setTitle(`:x: | No Command Found! Try Using  \`${prefix}help\``)
       .setColor("RED")
-      .setFooter(`${clientname}`, `${clientavatar}`)
+      .setFooter({text: `${clientname}`, iconURL: `${clientavatar}`})
       .setTimestamp();
-   if (!command && message.author.id != client.id && !message.author.bot) return message.channel.send({ embeds: [nocmd_embed] });
+   if (!command) return message.channel.send({ embeds: [nocmd_embed] });
    if (command.toggleOff) {
       let toggleoff_embed = new MessageEmbed()
          .setTitle(
             `:x: | That Command Has Been Disabled By The Developers! Please Try Later.`
          )
          .setColor("RED")
-         .setFooter(`${clientname}`, `${clientavatar}`)
+         .setFooter({text: `${clientname}`, iconURL: `${clientavatar}`})
          .setTimestamp();
       return message.reply({ embeds: [toggleoff_embed] });
    } else if (!message.member.permissions.has(command.userpermissions || [])) {
       let userperms_embed = new MessageEmbed()
          .setTitle(`:x: | You Don't Have Permissions To Use The Command!`)
          .setColor("RED")
-         .setFooter(`${clientname}`, `${clientavatar}`)
+         .setFooter({text: `${clientname}`, iconURL: `${clientavatar}`})
          .setTimestamp();
       return message.reply({ embeds: [userperms_embed] });
    } else if (!message.guild.me.permissions.has(command.botpermissions || [])) {
       let botperms_embed = new MessageEmbed()
          .setTitle(`:x: | I Don't Have Permissions To Use The Command!`)
          .setColor("RED")
-         .setFooter(`${clientname}`, `${clientavatar}`)
+         .setFooter({text: `${clientname}`, iconURL: `${clientavatar}`})
          .setTimestamp();
       return message.reply({ embeds: [botperms_embed] });
    } else if (command.developersOnly) {
@@ -82,7 +78,7 @@ client.on("messageCreate", async (message) => {
                `Developers: ${developerID.map((v) => `<@${v}>`).join(",")}`
             )
             .setColor("RED")
-            .setFooter(`${clientname}`, `${clientavatar}`)
+            .setFooter({text: `${clientname}`, iconURL: `${clientavatar}`})
             .setTimestamp();
          return message.reply({ embeds: [developersOnly_embed] });
       }
@@ -104,7 +100,7 @@ client.on("messageCreate", async (message) => {
                )}\` To Use \`${prefix}${command.name}\` again!`
             )
             .setColor("BLUE")
-            .setFooter(`${clientname}`, `${clientavatar}`)
+            .setFooter({text: `${clientname}`, iconURL: `${clientavatar}`})
             .setTimestamp();
 
          return message.reply({ embeds: [cooldown_embed] });
@@ -119,5 +115,5 @@ client.on("messageCreate", async (message) => {
          client.cooldowns.delete(`${command.name}${message.author.id}`);
       }, command.cooldowns);
    }
-   await command.run(client, message, args, db);
+   await command.run(client, message, args);
 });
