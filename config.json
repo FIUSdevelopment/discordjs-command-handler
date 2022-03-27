@@ -1,0 +1,13 @@
+{
+    "token": "ODkyMDQ2OTY1MjgwNDg5NTMz.YVHNeQ.msRbSGTpp7lBg1DH5rV3Ikakmrc",
+    "client": {
+        "intents": 32767
+    },
+    "prefix": "test.",
+    "info": {
+        "name": "",
+        "avatar": "",
+        "id": ""
+    },
+    "owner": ["845768796841050112"]
+}
