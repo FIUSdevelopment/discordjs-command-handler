@@ -1,7 +1,72 @@
 {
     "token": "ODkyMDQ2OTY1MjgwNDg5NTMz.YVHNeQ.msRbSGTpp7lBg1DH5rV3Ikakmrc",
     "client": {
-        "intents": 32767
+        "intents": [
+            {
+                "name": "GUILDS", 
+                "value": true
+            },
+            {
+                "name": "GUILD_MEMBERS", 
+                "value": true
+            },
+            {
+                "name": "GUILD_BANS", 
+                "value": true
+            },
+            {
+                "name": "GUILD_EMOJIS_AND_STICKERS", 
+                "value": true
+            },
+            {
+                "name": "GUILD_INTEGRATIONS", 
+                "value": true
+            },
+            {
+                "name": "GUILD_WEBHOOKS", 
+                "value": true
+            },
+            {
+                "name": "GUILD_INVITES", 
+                "value": true
+            },
+            {
+                "name": "GUILD_VOICE_STATES", 
+                "value": true
+            },
+            {
+                "name": "GUILD_PRESENCES", 
+                "value": true
+            },
+            {
+                "name": "GUILD_MESSAGES", 
+                "value": true
+            },
+            {
+                "name": "GUILD_MESSAGE_REACTIONS", 
+                "value": true
+            },
+            {
+                "name": "GUILD_MESSAGE_TYPING", 
+                "value": true
+            },
+            {
+                "name": "DIRECT_MESSAGES", 
+                "value": true
+            },
+            {
+                "name": "DIRECT_MESSAGE_REACTIONS", 
+                "value": true
+            },
+            {
+                "name": "DIRECT_MESSAGE_TYPING", 
+                "value": true
+            },
+            {
+                "name": "GUILD_SCHEDULED_EVENTS", 
+                "value": true
+            }
+        ]
     },
     "prefix": "test.",
     "info": {
