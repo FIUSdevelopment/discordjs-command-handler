@@ -8,9 +8,9 @@ module.exports = async function (client) {
     eventFiles.map((value) => {
         const event = require(value)
         if (event.once) {
-	    	client.once(event.name, (...args) => event.execute(...args));
+	    	Client.once(event.name, (...args) => event.execute(...args));
 	    } else {
-		    client.on(event.name, (...args) => event.execute(...args));
+		    Client.on(event.name, (...args) => event.execute(...args));
     	}
   });
 }
