@@ -7,5 +7,6 @@ module.exports = async () => {
             intents.push(intent.name);
         }
     });
-    return(intents)
+    return intents;
+    console.log(intents)
 }

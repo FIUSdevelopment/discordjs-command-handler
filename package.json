@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "npm start",
-    "start": "node --trace-deprecation --trace-warnings ."
+    "start": "node --trace-deprecation --trace-warnings .",
+    "download": "git pull",
+    "upload": "git add --all && git commit --m upload && git push",
+    "resync": "npm run download && npm run upload"
   },
   "repository": {
     "type": "git",
