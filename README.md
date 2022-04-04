@@ -9,6 +9,8 @@ This is a free repositories, you can use it but you have to keep credits.js (the
 
 ## Discord intents calculator
 This thing is disabled.
+## Discord client creator
+This thing is disabled.
 
 ## Help:
 If You need help do not esitate to contact me in the support server (https://bit.ly/fius) or open an issue.
