@@ -1,5 +1,5 @@
 {
-  "clienttoken": "BotToken (discord.dev)",
+  "clienttoken": "",
 
   "Note_Token:":"Put Your Bot Token Above (If your using replit then make a new secret 'clienttoken' and put ur bot token there... and then keep this string empty)",
 
@@ -30,7 +30,12 @@
 
   "noteslashcommandpublic": "True if your slash commands are for all server, false if is only for testing server",
 
-  "databasefilename": ""
+  "databasefilename": "",
+
+  "helpEmoji": {
+    "developers":"",
+    "info":"👍"
+  }
 }
 
 

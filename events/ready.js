@@ -1,8 +1,8 @@
 const client = require("../index");
 const chalk = require("chalk");
 const { version: discordjsVersion } = require("discord.js");
-const { prefix } = require("../botconfig/main.json");
-const main_json = require("../botconfig/main.json");
+const { prefix } = require("../config.js");
+const main_json = require("../config.js");
 
 client.on("ready", async () => {
   const supportServer = client.guilds.cache.get(`${main_json.TestingServerID}`);

@@ -3,8 +3,8 @@ const {
    MessageActionRow,
    MessageSelectMenu,
 } = require("discord.js");
-const helpemoji = require("../../../botconfig/help.json");
-const { clientname, clientavatar } = require("../../../botconfig/main.json");
+const helpemoji = require("../../../config.js").helpEmoji;
+const { clientname, clientavatar } = require("../../../config.js");
 module.exports = {
    name: "help",
    cooldowns: 3000,

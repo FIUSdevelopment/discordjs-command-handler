@@ -1,7 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 const glob = require("glob");
 const chalk = require("chalk");
-const { clientname, clientavatar } = require("../../botconfig/main.json");
 module.exports = {
    name: "reload",
    cooldowns: 3000,
@@ -12,6 +11,9 @@ module.exports = {
    userpermissions: ["SEND_MESSAGES", "VIEW_CHANNEL"],
    botpermissions: ["ADMINISTRATOR"],
    run: async (client, message, args) => {
+      var clientname = client.application.name;
+      const { displayAvatarURL } = await client.fetchUser(client.application.id);
+      var clientavatar = displayAvatarURL;
       client.commands.sweep(() => true);
       glob(`${__dirname}/../**/*.js`, async (err, filePaths) => {
          if (err) return console.log(err);

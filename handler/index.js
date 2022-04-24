@@ -2,7 +2,7 @@ const { glob } = require("glob");
 const { promisify } = require("util");
 const { Client, Message } = require("discord.js");
 const globPromise = promisify(glob);
-const mainjson = require("../botconfig/main.json");
+const mainjson = require("../config.js");
 const chalk = require("chalk");
 const slashpublic = mainjson.slashcommandspublic;
 
@@ -70,7 +70,7 @@ module.exports = async (client) => {
     } else {*/
     if(!slashpublic){
       if (!mainjson.TestingServerID){
-        return console.log("Pls set a Testing server id if you want the commands private (./botconfig/main.json)")
+        return console.log("Pls set a Testing server id if you want the commands private (./config.js)")
       } else {  
         await client.guilds.cache
           .get(mainjson.TestingServerID)

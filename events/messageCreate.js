@@ -2,9 +2,9 @@ const client = require("../index");
 const { MessageEmbed } = require("discord.js");
 const chalk = require("chalk");
 const ms = require("ms");
-const { developerID, clientavatar, clientname, whitelisted } = require("../botconfig/main.json");
+const { developerID, clientavatar, clientname, whitelisted } = require("../config.js");
 const prefix = client.config.prefix;
-const { randomMessages_Cooldown } = require("../botconfig/main.json");
+const { randomMessagesCooldown } = require("../config.js");
 const { config } = require("process");
 client.on("messageCreate", async (message) => {
       if (!message.guild || !message.content.toLocaleLowerCase().startsWith(client.config.prefix)){

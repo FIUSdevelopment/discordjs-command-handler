@@ -13,7 +13,7 @@ client.commands = new Collection();
 client.aliases = new Collection();
 client.cooldowns = new Collection();
 client.slashCommands = new Collection();
-client.config = require("./botconfig/main.json");
+client.config = require("./config.js");
 const config = client.config;
 client.db = new MapDB(config.databasefilename);
 require("./handler")(client);

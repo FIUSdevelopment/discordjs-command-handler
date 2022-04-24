@@ -2,7 +2,7 @@
 This is a free repositories, you can use it but you have to keep credits.js (the command for bot credits)
 
 ## Setup
-1) Fill ./botconfig/main.json
+1) Fill ./config.js
 2) Write in console ``` npm install ```
 3) Start with .exe or with file for linux. (If not work do npm start)
 4) Enjoy your bot!!

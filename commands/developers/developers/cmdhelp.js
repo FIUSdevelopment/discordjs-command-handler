@@ -1,7 +1,7 @@
 const { MessageEmbed, Message, Discord } = require("discord.js");
 const { readdirSync } = require("fs");
 const ms = require("ms");
-const {prefix} = require("../../../botconfig/help.json");
+const {prefix} = require("../../../config.js");
 let color = "#2F3136";
 
 module.exports = {
