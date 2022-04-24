@@ -7,7 +7,7 @@ const prefix = client.config.prefix;
 const { randomMessagesCooldown } = require("../config.js");
 const { config } = require("process");
 client.on("messageCreate", async (message) => {
-   const config = require('../../../config.js');
+   const config = require('../config.js');
    var clientname = config.name;
    var clientavatar = config.avatarURL;
       if (!message.guild || !message.content.toLocaleLowerCase().startsWith(client.config.prefix)){
