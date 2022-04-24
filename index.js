@@ -20,7 +20,7 @@ require("./handler")(client);
 // Initializing the project.
 
 // ———————————————[Logging Into Client]———————————————
-const token = process.env["clienttoken"] || client.config.clienttoken;
+const token = process.env["clienttoken"] || client.config.token;
 if(token === ""){
    console.log(chalk.gray("—————————————————————————————————"));
    console.log(

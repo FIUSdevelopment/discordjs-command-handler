@@ -2,7 +2,7 @@ const client = require("../index");
 const { MessageEmbed } = require("discord.js");
 const chalk = require("chalk");
 const ms = require("ms");
-const { developerID, clientavatar, clientname, whitelisted } = require("../config.js");
+const { developerID, clientavatar, clientname, whitelistedBots } = require("../config.js");
 const prefix = client.config.prefix;
 const { randomMessagesCooldown } = require("../config.js");
 const { config } = require("process");
@@ -11,7 +11,7 @@ client.on("messageCreate", async (message) => {
          return
       }
       if (message.author.bot) {
-         if (!whitelisted.includes(message.author.id)){
+         if (!whitelistedBots.includes(message.author.id)){
             if (message.author.bot){
                if (message.content.toLocaleLowerCase().startsWith(client.config.prefix)) {
                   return message.channel.send("You aren't whitelisted");

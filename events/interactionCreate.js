@@ -1,6 +1,5 @@
 const client = require("../index.js");
 const MapDB = require("quickmap.db");
-client.config = require("./config.js");
 const config = client.config;
 const db = new MapDB(config.databasefilename);
 client.on("interactionCreate", async (interaction) => {
