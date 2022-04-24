@@ -8,7 +8,7 @@ const { randomMessagesCooldown } = require("../config.js");
 const { config } = require("process");
 client.on("messageCreate", async (message) => {
    var clientname = client.application.name;
-   const { displayAvatarURL } = await client.fetchUser(client.application.id);
+   const { displayAvatarURL } = await client.users.fetch(client.application.id);
    var clientavatar = displayAvatarURL;
       if (!message.guild || !message.content.toLocaleLowerCase().startsWith(client.config.prefix)){
          return

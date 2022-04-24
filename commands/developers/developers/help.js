@@ -15,7 +15,7 @@ module.exports = {
    botpermissions: ["ADMINISTRATOR"],
    run: async (client, message, args) => {
       var clientname = client.application.name;
-      const { displayAvatarURL } = client.fetchUser(client.application.id);
+      const { displayAvatarURL } = client.users.fetch(client.application.id);
       var clientavatar = displayAvatarURL;
       const roleColor =
          message.guild.me.displayHexColor === "#000000"

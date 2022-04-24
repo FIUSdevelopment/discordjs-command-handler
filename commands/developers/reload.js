@@ -12,7 +12,7 @@ module.exports = {
    botpermissions: ["ADMINISTRATOR"],
    run: async (client, message, args) => {
       var clientname = client.application.name;
-      const { displayAvatarURL } = await client.fetchUser(client.application.id);
+      const { displayAvatarURL } = await client.users.fetch(client.application.id);
       var clientavatar = displayAvatarURL;
       client.commands.sweep(() => true);
       glob(`${__dirname}/../**/*.js`, async (err, filePaths) => {
