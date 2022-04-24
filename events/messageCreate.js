@@ -2,11 +2,14 @@ const client = require("../index");
 const { MessageEmbed } = require("discord.js");
 const chalk = require("chalk");
 const ms = require("ms");
-const { developerID, clientavatar, clientname, whitelistedBots } = require("../config.js");
+const { developerID, whitelistedBots } = require("../config.js");
 const prefix = client.config.prefix;
 const { randomMessagesCooldown } = require("../config.js");
 const { config } = require("process");
 client.on("messageCreate", async (message) => {
+   var clientname = client.application.name;
+   const { displayAvatarURL } = await client.fetchUser(client.application.id);
+   var clientavatar = displayAvatarURL;
       if (!message.guild || !message.content.toLocaleLowerCase().startsWith(client.config.prefix)){
          return
       }

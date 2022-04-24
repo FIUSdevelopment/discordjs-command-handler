@@ -4,7 +4,6 @@ const {
    MessageSelectMenu,
 } = require("discord.js");
 const helpemoji = require("../../../config.js").helpEmoji;
-const { clientname, clientavatar } = require("../../../config.js");
 module.exports = {
    name: "help",
    cooldowns: 3000,
@@ -15,6 +14,9 @@ module.exports = {
    userpermissions: ["SEND_MESSAGES", "VIEW_CHANNEL"],
    botpermissions: ["ADMINISTRATOR"],
    run: async (client, message, args) => {
+      var clientname = client.application.name;
+      const { displayAvatarURL } = client.fetchUser(client.application.id);
+      var clientavatar = displayAvatarURL;
       const roleColor =
          message.guild.me.displayHexColor === "#000000"
             ? "#ffffff"
