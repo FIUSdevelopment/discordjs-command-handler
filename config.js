@@ -1,10 +1,12 @@
 module.exports = {
-    token = '',
-    prefix = '',
-    developersID = [],
-    randomMessagesCooldown = [],
-    whitelistedBots = [],
-    slashcommandspublic = true,
+    token: '',
+    name: '',
+    avatarURL: '',
+    prefix: '',
+    developersID: [],
+    randomMessagesCooldown: [],
+    whitelistedBots: [],
+    slashcommandspublic: true,
     databasefilename: "",
 
     helpEmoji: {
